@@ -26,7 +26,7 @@ const getById = async (req, res) => {
     const result = await userService.getById(+id);
     return res.status(200).json(result);
   } catch (error) {
-    return res.status(400).json(error.message);
+    return res.status(404).json(error.message);
   }
 };
 
@@ -37,7 +37,17 @@ const update = async (req, res) => {
     await userService.update(id, name, email, cpf);
     return res.status(200).json({ id, name, email, cpf });
   } catch (error) {
-    return res.status(409).json(error.message);
+    return res.status(404).json(error.message);
+  }
+};
+
+const deleteUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await userService.deleteUser(id);
+    return res.status(204).end();
+  } catch (error) {
+    return res.status(404).json(error.message);
   }
 };
 
@@ -46,4 +56,5 @@ module.exports = {
   getAll,
   getById,
   update,
+  deleteUser,
 };

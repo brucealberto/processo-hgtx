@@ -22,9 +22,15 @@ const update = async (id, name, email, cpf) => {
   return result;
 };
 
+const deleteUser = async (id) => {
+  const result = await userModel.deleteUser(id);
+  return result;
+};
+
 module.exports = {
   create,
   getAll,
   getById,
   update,
+  deleteUser,
 };
