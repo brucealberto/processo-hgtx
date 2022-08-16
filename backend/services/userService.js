@@ -15,10 +15,10 @@ const getById = async (id) => {
   return result;
 };
 
-const update = async (name, email, cpf, id) => {
-  // const userId = await getById(id);
-  // if (userId.length === 0) throw new Error();
-  const result = await userModel.update(name, email, cpf, id);
+const update = async (id, name, email, cpf) => {
+  const userId = await getById(id);
+  if (!userId.length) throw new Error('user not found');
+  const result = await userModel.update(id, name, email, cpf);
   return result;
 };
 

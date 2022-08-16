@@ -7,7 +7,7 @@ const create = async (req, res) => {
 
     return res.status(201).json(result);
   } catch (error) {
-    return res.status(409).json(error);
+    return res.status(409).json(error.message);
   }
 };
 
@@ -16,7 +16,7 @@ const getAll = async (_req, res) => {
     const result = await userService.getAll();
     return res.status(200).json(result);
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(400).json(error.message);
   }
 };
 
@@ -26,7 +26,7 @@ const getById = async (req, res) => {
     const result = await userService.getById(+id);
     return res.status(200).json(result);
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(400).json(error.message);
   }
 };
 
@@ -37,7 +37,7 @@ const update = async (req, res) => {
     await userService.update(id, name, email, cpf);
     return res.status(200).json({ id, name, email, cpf });
   } catch (error) {
-    return res.status(409).json(error);
+    return res.status(409).json(error.message);
   }
 };
 
