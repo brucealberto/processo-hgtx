@@ -1,11 +1,12 @@
 const userService = require('../services/userService');
+const generateToken = require('../utils/generateToken');
 
 const create = async (req, res) => {
   try {
     const { name, email, cpf } = req.body;
-    const result = await userService.create(name, email, cpf);
-
-    return res.status(201).json(result);
+    await userService.create(name, email, cpf);
+    const token = generateToken(email);
+    return res.status(201).json({ token });
   } catch (error) {
     return res.status(409).json(error.message);
   }
