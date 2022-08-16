@@ -10,7 +10,13 @@ const getAll = async () => {
   return result;
 };
 
+const update = async (name, email, cpf, id) => {
+  const result = await userModel.update(name, email, cpf, id);
+  return result;
+};
+
 module.exports = {
   create,
   getAll,
+  update,
 };
