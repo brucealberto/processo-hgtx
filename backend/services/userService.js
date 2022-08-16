@@ -10,7 +10,14 @@ const getAll = async () => {
   return result;
 };
 
+const getById = async (id) => {
+  const result = await userModel.getById(id);
+  return result;
+};
+
 const update = async (name, email, cpf, id) => {
+  // const userId = await getById(id);
+  // if (userId.length === 0) throw new Error();
   const result = await userModel.update(name, email, cpf, id);
   return result;
 };
@@ -18,5 +25,6 @@ const update = async (name, email, cpf, id) => {
 module.exports = {
   create,
   getAll,
+  getById,
   update,
 };
