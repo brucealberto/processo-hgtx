@@ -1,9 +1,12 @@
+import { BrowserRouter } from 'react-router-dom';
+import { AppRoutes } from './app.routes';
 
 function App() {
-
   return (
-    <h1>espero passar no processo da hgtx</h1>
-  )
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
