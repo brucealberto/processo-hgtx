@@ -1,5 +1,12 @@
+import './login.css';
 export const Login = () => {
   return (
-    <h1>Tela de Login</h1>
+    <div className="login">
+      <h1>Login do Usuário</h1>
+
+      <form autoComplete="false">
+    <input type="text" />
+      </form>
+    </div>
   )
 }
