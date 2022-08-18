@@ -1,9 +1,9 @@
-export const CustomInput = ({label, ...rest}) => {
+export const CustomInput = ({ label, place, type, ...rest }) => {
   return (
     <div>
-      <label htmlFor='id-input'>Nome:</label>
+      <label htmlFor='id-input'>{label}</label>
       <div>
-        <input {...rest} id='id-input' type='text' placeholder={label} />
+        <input {...rest} id='id-input' type={type} placeholder={place} />
       </div>
     </div>
   );
