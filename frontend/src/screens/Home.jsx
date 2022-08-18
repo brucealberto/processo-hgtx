@@ -1,15 +1,16 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from "react"
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
   const [users, setUsers] = useState([]) 
   useEffect(()=> {
-    async function getPosts() {
+    async function getUsers() {
      const { data } = await axios.get('http://localhost:3006/user')
      setUsers(data);
     }
-    getPosts()
+    getUsers()
   }, [])
 
 
@@ -38,6 +39,7 @@ export const Home = () => {
             </tbody>
            </table>    
               <hr />
+              <Link className='link' to="/"> voltar para tela inicial</Link>
 
       </div>
     </div>

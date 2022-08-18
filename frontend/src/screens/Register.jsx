@@ -12,7 +12,7 @@ export const Register = () => {
       <form onSubmit={handleSubmit} autoComplete='false'>
         <h2>Cadastrar</h2>
         <CustomInput type='text' label='Nome:' place='digite seu nome' />
-        <CustomInput type='password' label='Senha:' place='digite sua senha' />
+        <CustomInput type='email' label='Email:' place='digite sua senha' />
         <CustomInput type='text' label='CPF:' place='digite seu cpf' />
 
       <button className='button' type='submit'>Cadastrar</button>
