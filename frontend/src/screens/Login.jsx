@@ -14,7 +14,7 @@ export const Login = () => {
       <form  autoComplete='false'>
         <h2>Login</h2>
         <CustomInput type='text' label='Nome:' place='digite seu nome' />
-        <CustomInput type='email' label='Email:' place='digite sua senha' />
+        <CustomInput type='email' label='Email:' place='digite seu email' />
 
       <button className='button' type='submit'>Entrar</button>
         <Link className='link' to="/register">criar uma conta</Link>

@@ -5,7 +5,7 @@ const authToken = require('./middlewares/authToken');
 const route = express.Router();
 
 route.post('/user', userController.create);
-route.get('/user', authToken, userController.getAll);
+route.get('/user', userController.getAll);
 route.get('/user/:id', userController.getById);
 route.put('/user/:id', userController.update);
 route.delete('/user/:id', userController.deleteUser);
