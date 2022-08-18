@@ -1,9 +1,9 @@
-export const CustomInput = ({ label, place, type, ...rest }) => {
+export const CustomInput = ({ label, place, type, value, onChange }) => {
   return (
     <div>
       <label>{label}</label>
       <div>
-        <input {...rest} type={type} placeholder={place} />
+        <input type={type} placeholder={place} value={value} onChange={onChange}/>
       </div>
     </div>
   );
